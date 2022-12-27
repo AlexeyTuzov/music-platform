@@ -30,7 +30,6 @@ export class TracksController {
 	)
 	create(@Body() dto: CreateTrackDto, @UploadedFiles() files) {
 		const { picture, audio } = files;
-		console.log(files);
 		return this.tracksService.create(dto, audio[0], picture[0]);
 	}
 
